@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technical Skills - Drishti Arya">
+    <title>Skills - Drishti Arya</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Additional styles for skills page */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-item {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+        }
+        
+        .skill-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .skill-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-teal);
+            margin-top: 1rem;
+        }
+        
+        /* Responsive for tablets */
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+        
+        /* Responsive for mobile */
+        @media (max-width: 600px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .skill-item {
+                padding: 1.5rem;
+            }
+            
+            .skill-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .skill-name {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Header Section -->
+    <header id="home" class="header-section">
+        <div class="container">
+            <div class="profile-intro">
+                <div class="profile-text">
+                    <h1 class="name">Technical Skills</h1>
+                    <p class="tagline">My Programming Languages & Tools</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Navigation Bar -->
+    <nav id="navbar" class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-button">Home</a></li>
+                <li><a href="education.html" class="nav-button">Education</a></li>
+                <li><a href="skills.html" class="nav-button active">Skills</a></li>
+                <li><a href="projects.html" class="nav-button">Projects</a></li>
+                <li><a href="contact.html" class="nav-button">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Skills Grid Section -->
+            <section id="skills" class="content-section fade-in">
+                <h2 class="section-title">Programming Languages & Technologies</h2>
+                
+                <div class="skills-grid">
+                    <!-- C Programming -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C Programming Logo">
+                        </div>
+                        <h3 class="skill-name">C</h3>
+                    </div>
+
+                    <!-- Java -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java Logo">
+                        </div>
+                        <h3 class="skill-name">Java</h3>
+                    </div>
+
+                    <!-- Python -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo">
+                        </div>
+                        <h3 class="skill-name">Python</h3>
+                    </div>
+
+                    <!-- VS Code -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code Logo">
+                        </div>
+                        <h3 class="skill-name">VS Code</h3>
+                    </div>
+
+                    <!-- HTML -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML Logo">
+                        </div>
+                        <h3 class="skill-name">HTML</h3>
+                    </div>
+
+                    <!-- CSS -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS Logo">
+                        </div>
+                        <h3 class="skill-name">CSS</h3>
+                    </div>
+
+                    <!-- SQL -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL Logo">
+                        </div>
+                        <h3 class="skill-name">SQL</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other Skills Section -->
+            <section class="content-section fade-in">
+                <h2 class="section-title">Other Technical Competencies</h2>
+                
+                <article class="content-card">
+                    <div class="skill-group">
+                        <h4>Data Structures & Algorithms</h4>
+                        <p>Strong foundation in DSA with 70+ problems solved on LeetCode</p>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Database Management</h4>
+                        <p>Experience with MySQL, PHP integration, and database design</p>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Version Control</h4>
+                        <p>Proficient with Git and GitHub for collaborative development</p>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Problem Solving</h4>
+                        <p>Consistent competitive programming participation and contest involvement</p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Back to Home Link -->
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="index.html" class="download-btn">← Back to Home</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <p>&copy; 2025 Drishti Arya. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/drishti-arya-366066307" target="_blank" rel="noopener">LinkedIn</a> | 
+                <a href="https://github.com/drishtii04" target="_blank" rel="noopener">GitHub</a> | 
+                <a href="https://leetcode.com/u/DRISHTIARYA_04" target="_blank" rel="noopener">LeetCode</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects - Drishti Arya">
+    <title>Projects - Drishti Arya</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Additional styles for projects page */
+        .project-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project-item {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .project-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary-teal), var(--dark-teal));
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            color: var(--dark-teal);
+            margin-bottom: 1rem;
+        }
+        
+        .project-description {
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-tag {
+            background-color: var(--light-bg);
+            color: var(--primary-teal);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .project-features {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .project-features li {
+            padding: 0.4rem 0;
+            color: var(--text-dark);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .project-features li:before {
+            content: "✓";
+            color: var(--coral-accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Header Section -->
+    <header id="home" class="header-section">
+        <div class="container">
+            <div class="profile-intro">
+                <div class="profile-text">
+                    <h1 class="name">My Projects</h1>
+                    <p class="tagline">Web Development & Database Management Solutions</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Navigation Bar -->
+    <nav id="navbar" class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-button">Home</a></li>
+                <li><a href="education.html" class="nav-button">Education</a></li>
+                <li><a href="skills.html" class="nav-button">Skills</a></li>
+                <li><a href="projects.html" class="nav-button active">Projects</a></li>
+                <li><a href="contact.html" class="nav-button">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Projects Grid Section -->
+            <section id="projects" class="content-section fade-in">
+                <h2 class="section-title">Featured Projects</h2>
+                
+                <div class="project-showcase">
+                    
+                    <!-- Car Management System -->
+                    <div class="project-item">
+                        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop" alt="Car Management System" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Car Management System</h3>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                            <p class="project-description">
+                                A comprehensive web application for managing car inventory, buying, and selling records with an intuitive interface.
+                            </p>
+                            <ul class="project-features">
+                                <li>Responsive and user-friendly interface</li>
+                                <li>Dynamic data management features</li>
+                                <li>Efficient record handling system</li>
+                                <li>Clean layouts for seamless navigation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- NGO Management System -->
+                    <div class="project-item">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=400&fit=crop" alt="NGO Management System" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">NGO Management System</h3>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">AI Chatbot</span>
+                            </div>
+                            <p class="project-description">
+                                Complete NGO management solution with donor tracking, event management, and AI-powered chatbot support.
+                            </p>
+                            <ul class="project-features">
+                                <li>Donor records and management</li>
+                                <li>Event tracking and coordination</li>
+                                <li>Volunteer activity management</li>
+                                <li>Real-time AI chatbot assistance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Personal Finance Tracker -->
+                    <div class="project-item">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&h=400&fit=crop" alt="Personal Finance Tracker" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Personal Finance Tracker</h3>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                            <p class="project-description">
+                                Web application to monitor income, expenses, and savings goals with interactive data visualization.
+                            </p>
+                            <ul class="project-features">
+                                <li>Interactive charts for spending patterns</li>
+                                <li>Budget allocation visualization</li>
+                                <li>Transaction history management</li>
+                                <li>Date range and category filters</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Online Quiz Application -->
+                    <div class="project-item">
+                        <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=600&h=400&fit=crop" alt="Online Quiz Application" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Online Quiz Application</h3>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                            <p class="project-description">
+                                Interactive quiz platform with timer functionality, instant scoring, and performance tracking system.
+                            </p>
+                            <ul class="project-features">
+                                <li>Multiple-choice questions system</li>
+                                <li>Real-time timer and scoring</li>
+                                <li>User authentication</li>
+                                <li>Leaderboard for top scorers</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Project Statistics -->
+            <section class="content-section fade-in">
+                <h2 class="section-title">Project Statistics</h2>
+                
+                <article class="content-card">
+                    <div class="skills-card">
+                        <div class="skill-group">
+                            <h4>4+</h4>
+                            <p>Completed Projects</p>
+                        </div>
+                        <div class="skill-group">
+                            <h4>5+</h4>
+                            <p>Technologies Used</p>
+                        </div>
+                        <div class="skill-group">
+                            <h4>100%</h4>
+                            <p>Success Rate</p>
+                        </div>
+                        <div class="skill-group">
+                            <h4>70+</h4>
+                            <p>LeetCode Problems Solved</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Back to Home Link -->
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="index.html" class="download-btn">← Back to Home</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <p>&copy; 2025 Drishti Arya. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/drishti-arya-366066307" target="_blank" rel="noopener">LinkedIn</a> | 
+                <a href="https://github.com/drishtii04" target="_blank" rel="noopener">GitHub</a> | 
+                <a href="https://leetcode.com/u/DRISHTIARYA_04" target="_blank" rel="noopener">LeetCode</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+</html>

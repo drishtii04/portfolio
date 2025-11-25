@@ -1,0 +1,416 @@
+/* =============================================
+   CSS Variables for easy customization
+   ============================================= */
+:root {
+    --primary-teal: #14b8a6;
+    --dark-teal: #0f766e;
+    --coral-accent: #ff6b6b;
+    --light-bg: #f0fdfa;
+    --white: #ffffff;
+    --text-dark: #1f2937;
+    --text-gray: #6b7280;
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+}
+
+/* =============================================
+   Global Styles and Reset
+   ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--dark-teal);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition-speed) ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =============================================
+   Container for consistent width
+   ============================================= */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-medium);
+}
+
+/* =============================================
+   Header Section - simple layout for header
+   ============================================= */
+.header-section {
+    background: linear-gradient(135deg, var(--primary-teal), var(--dark-teal));
+    color: var(--white);
+    padding: var(--spacing-large) 0;
+    text-align: center;
+}
+
+.profile-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-medium);
+}
+
+
+
+.profile-text {
+    text-align: center;
+}
+
+.name {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-small);
+    color: var(--white);
+}
+
+.tagline {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-medium);
+    opacity: 0.95;
+}
+
+.contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-medium);
+    justify-content: center;
+    margin-bottom: var(--spacing-medium);
+    font-size: 0.95rem;
+}
+
+.contact-row span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: var(--spacing-small) var(--spacing-medium);
+    border-radius: 8px;
+}
+
+/* Download Resume Button - coral accent color */
+.download-btn {
+    display: inline-block;
+    background-color: var(--coral-accent);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all var(--transition-speed) ease;
+}
+
+.download-btn:hover {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.download-btn:focus {
+    outline: 3px solid var(--white);
+    outline-offset: 3px;
+}
+
+/* =============================================
+   Sticky Navigation Bar
+   ============================================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: var(--spacing-medium) 0;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-small);
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: var(--primary-teal);
+    color: var(--white);
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+}
+
+.nav-button:hover {
+    background-color: var(--dark-teal);
+    transform: scale(1.05);
+}
+
+.nav-button:focus {
+    outline: 2px solid var(--coral-accent);
+    outline-offset: 2px;
+}
+
+/* Active nav link when scrolling */
+.nav-button.active {
+    background-color: var(--coral-accent);
+}
+
+/* =============================================
+   Main Content Area
+   ============================================= */
+.main-content {
+    padding: var(--spacing-large) 0;
+}
+
+.content-section {
+    margin-bottom: var(--spacing-large);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+/* Class added via JS to fade in sections */
+.content-section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-medium);
+    color: var(--primary-teal);
+    border-bottom: 3px solid var(--coral-accent);
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+/* Card styling for content blocks */
+.content-card {
+    background-color: var(--white);
+    padding: var(--spacing-large);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: var(--spacing-medium);
+    transition: all var(--transition-speed) ease;
+}
+
+.content-card:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+}
+
+.card-title {
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-small);
+    color: var(--dark-teal);
+}
+
+.institution {
+    font-weight: 500;
+    color: var(--text-gray);
+    margin-bottom: 4px;
+}
+
+.details {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+}
+
+/* =============================================
+   Skills Section - simple grid layout
+   ============================================= */
+.skills-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-medium);
+}
+
+.skill-group h4 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: var(--primary-teal);
+}
+
+.skill-group p {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+/* =============================================
+   Projects Section - toggle details button
+   ============================================= */
+.project-card {
+    position: relative;
+}
+
+.toggle-details-btn {
+    display: inline-block;
+    margin-top: var(--spacing-small);
+    padding: 8px 16px;
+    background-color: var(--coral-accent);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+}
+
+.toggle-details-btn:hover {
+    background-color: #ff5252;
+}
+
+.toggle-details-btn:focus {
+    outline: 2px solid var(--dark-teal);
+    outline-offset: 2px;
+}
+
+.project-details {
+    margin-top: var(--spacing-medium);
+    padding-left: var(--spacing-medium);
+}
+
+.project-details ul {
+    list-style: disc inside;
+}
+
+.project-details li {
+    margin-bottom: 6px;
+    color: var(--text-dark);
+}
+
+/* =============================================
+   Activities and Achievements Lists
+   ============================================= */
+.activity-list li,
+.achievement-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e7eb;
+    color: var(--text-dark);
+}
+
+.activity-list li:before,
+.achievement-list li:before {
+    content: "✓ ";
+    color: var(--primary-teal);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* =============================================
+   Personal Details Section
+   ============================================= */
+.personal-card p {
+    margin-bottom: var(--spacing-small);
+    color: var(--text-dark);
+}
+
+/* =============================================
+   Footer Section
+   ============================================= */
+.footer-section {
+    background-color: var(--dark-teal);
+    color: var(--white);
+    text-align: center;
+    padding: var(--spacing-large) 0;
+    margin-top: var(--spacing-large);
+}
+
+.footer-section p {
+    margin-bottom: var(--spacing-small);
+}
+
+.social-links a {
+    color: var(--white);
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+}
+
+.social-links a:hover {
+    color: var(--coral-accent);
+    text-decoration: underline;
+}
+
+.social-links a:focus {
+    outline: 2px solid var(--coral-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* =============================================
+   Responsive Design - Media Queries
+   ============================================= */
+
+/* Tablet and smaller */
+@media (max-width: 768px) {
+    .name {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .contact-row {
+        flex-direction: column;
+        gap: var(--spacing-small);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .skills-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .name {
+        font-size: 1.8rem;
+    }
+
+    .tagline {
+        font-size: 0.95rem;
+    }
+
+    .download-btn {
+        font-size: 0.9rem;
+        padding: 10px 24px;
+    }
+
+    .content-card {
+        padding: var(--spacing-medium);
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+}
