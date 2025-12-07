@@ -179,9 +179,14 @@ ul {
 
 /* Skills Section */
 .skills-card {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skill-group {
+    width: 30%;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .skill-group h4 {
@@ -237,14 +242,6 @@ ul {
     color: #333;
 }
 
-.activity-list li:before,
-.achievement-list li:before {
-    content: "✓ ";
-    color: #3a7d7d;
-    font-weight: bold;
-    margin-right: 8px;
-}
-
 /* Personal Details */
 .personal-card p {
     margin-bottom: 10px;
@@ -297,8 +294,8 @@ ul {
         font-size: 1.6rem;
     }
 
-    .skills-card {
-        grid-template-columns: 1fr;
+    .skill-group {
+        width: 100%;
     }
 }
 

@@ -226,8 +226,54 @@
 
     <!-- jQuery from CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Main JavaScript File -->
-    <script src="script.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            
+            // Animate navigation buttons on hover
+            $(".nav-button").mouseenter(function() {
+                $(this).css({position:"relative"});
+                $(this).animate({
+                    paddingLeft:'25px',
+                    paddingRight:'25px',
+                    fontSize:'18px'
+                }, "slow");
+            });
+
+            $(".nav-button").mouseleave(function() {
+                $(this).animate({
+                    paddingLeft:'18px',
+                    paddingRight:'18px',
+                    fontSize:'16px'
+                }, "slow");
+            });
+
+            // Animate content cards on hover
+            $(".content-card").mouseenter(function() {
+                $(this).css({position:"relative"});
+                $(this).animate({
+                    left:'10px'
+                }, 200);
+            });
+
+            $(".content-card").mouseleave(function() {
+                $(this).animate({
+                    left:'0px'
+                }, 200);
+            });
+
+            // Animate section titles on click
+            $(".section-title").click(function() {
+                $(this).animate({
+                    fontSize:'35px'
+                }, 200);
+                $(this).animate({
+                    fontSize:'32px'
+                }, 200);
+            });
+
+        });
+    </script>
 
 </body>
 </html>

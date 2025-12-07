@@ -24,8 +24,8 @@
                     <h1 class="name">Drishti Arya</h1>
                     <p class="tagline">Computer Science Student | Problem Solver | Web Developer</p>
                     <div class="contact-row">
-                        <span>drar23cs@cmrit.ac.in</span>
-                        <span>Bangalore, India</span>
+                        <p>drar23cs@cmrit.ac.in</p>
+                        <p>Bangalore, India</p>
                     </div>
                     <!-- Download Resume Button -->
                     <a href="DRISHTI_ARYA_RESUME.pdf" download="DRISHTI_ARYA_RESUME.pdf" class="download-btn">Download Resume</a>
@@ -226,8 +226,85 @@
 
     <!-- jQuery from CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Main JavaScript File -->
-    <script src="script.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            
+            // Append text when clicking download button
+            $(".download-btn").click(function() {
+                $(".tagline").append("<br>Building Amazing Web Projects!");
+            });
+
+            // Animate navigation buttons on hover
+            $(".nav-button").mouseenter(function() {
+                $(this).css({position:"relative"});
+                $(this).animate({
+                    paddingLeft:'25px',
+                    paddingRight:'25px',
+                    fontSize:'18px'
+                }, "slow");
+            });
+
+            $(".nav-button").mouseleave(function() {
+                $(this).animate({
+                    paddingLeft:'18px',
+                    paddingRight:'18px',
+                    fontSize:'16px'
+                }, "slow");
+            });
+
+            // Animate download button on click
+            $(".download-btn").click(function() {
+                $(this).css({position:"relative"});
+                $(this).animate({
+                    fontSize:'18px',
+                    paddingLeft:'40px',
+                    paddingRight:'40px'
+                }, 300);
+                
+                $(this).animate({
+                    fontSize:'16px',
+                    paddingLeft:'30px',
+                    paddingRight:'30px'
+                }, 300);
+            });
+
+            // Animate content cards on hover
+            $(".content-card").mouseenter(function() {
+                $(this).css({position:"relative"});
+                $(this).animate({
+                    left:'10px'
+                }, 200);
+            });
+
+            $(".content-card").mouseleave(function() {
+                $(this).animate({
+                    left:'0px'
+                }, 200);
+            });
+
+            // Change opacity of header section on click
+            $(".header-section").click(function() {
+                $(this).animate({
+                    opacity:'0.9'
+                }, 500);
+                $(this).animate({
+                    opacity:'1'
+                }, 500);
+            });
+
+            // Animate section titles on click
+            $(".section-title").click(function() {
+                $(this).animate({
+                    fontSize:'35px'
+                }, 200);
+                $(this).animate({
+                    fontSize:'32px'
+                }, 200);
+            });
+
+        });
+    </script>
 
 </body>
 </html>

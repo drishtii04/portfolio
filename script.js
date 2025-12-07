@@ -1,72 +1,104 @@
 /* =============================================
    jQuery-based Portfolio Script
-   Simple, beginner-friendly code
+   Using concepts taught in class
    ============================================= */
 
 // Wait for the DOM to be fully loaded
 $(document).ready(function() {
     
     /* =============================================
-       1. Smooth Scroll for Navigation Links
+       1. Append skill items dynamically on button click
        ============================================= */
-    // When user clicks on any nav link with href starting with "#"
-    $('a[href^="#"]').on('click', function(e) {
-        e.preventDefault(); // stop default jump behavior
-        
-        var target = $(this).attr('href'); // get the target section id
-        var targetElement = $(target);
-        
-        // Smoothly scroll to the target section
-        if (targetElement.length) {
-            $('html, body').animate({
-                scrollTop: targetElement.offset().top - 80 // offset for sticky nav
-            }, 800); // animation duration in milliseconds
-        }
+    $("#download-btn").click(function() {
+        $(".tagline").append("<br>Building Amazing Web Projects!");
     });
 
     /* =============================================
-       2. Simple Scrollspy - Highlight Active Nav
+       2. Animate navigation buttons on hover
        ============================================= */
-    // Get all sections with an id attribute
-    var sections = $('section[id]');
-    var navLinks = $('.nav-button');
-    
-    // Function to handle scroll and update active nav link
-    function handleScroll() {
-        var scrollPos = $(window).scrollTop() + 100; // offset for better trigger
-        
-        sections.each(function() {
-            var sectionTop = $(this).offset().top;
-            var sectionBottom = sectionTop + $(this).outerHeight();
-            var sectionId = $(this).attr('id');
-            
-            // Check if current scroll position is within this section
-            if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-                // Remove active class from all nav links
-                navLinks.removeClass('active');
-                // Add active class to the matching nav link
-                $('a[href="#' + sectionId + '"]').addClass('active');
-            }
-        });
-    }
-    
-    // Run handleScroll on page scroll
-    $(window).on('scroll', handleScroll);
-    
-    // Run once on page load to set initial active state
-    handleScroll();
+    $(".nav-button").mouseenter(function() {
+        $(this).css({position:"relative"});
+        $(this).animate({
+            paddingLeft:'25px',
+            paddingRight:'25px',
+            fontSize:'18px'
+        }, "fast");
+    });
+
+    $(".nav-button").mouseleave(function() {
+        $(this).animate({
+            paddingLeft:'18px',
+            paddingRight:'18px',
+            fontSize:'16px'
+        }, "fast");
+    });
 
     /* =============================================
-       3. Toggle Project Details (slideToggle)
+       3. Animate download button on click
        ============================================= */
-    // When user clicks "Show Details" button in project cards
-    $('.toggle-details-btn').on('click', function() {
+    $(".download-btn").click(function() {
+        $(this).css({position:"relative"});
+        $(this).animate({
+            fontSize:'18px',
+            paddingLeft:'40px',
+            paddingRight:'40px'
+        }, 300);
+        
+        $(this).animate({
+            fontSize:'16px',
+            paddingLeft:'30px',
+            paddingRight:'30px'
+        }, 300);
+    });
+
+    /* =============================================
+       4. Animate content cards on hover
+       ============================================= */
+    $(".content-card").mouseenter(function() {
+        $(this).css({position:"relative"});
+        $(this).animate({
+            left:'10px'
+        }, 200);
+    });
+
+    $(".content-card").mouseleave(function() {
+        $(this).animate({
+            left:'0px'
+        }, 200);
+    });
+
+    /* =============================================
+       5. Change background color of header section
+       ============================================= */
+    $(".header-section").click(function() {
+        $(this).animate({
+            opacity:'0.9'
+        }, 500);
+        $(this).animate({
+            opacity:'1'
+        }, 500);
+    });
+
+    /* =============================================
+       6. Append items to lists dynamically
+       ============================================= */
+    $(".section-title").click(function() {
+        $(this).animate({
+            fontSize:'35px'
+        }, 200);
+        $(this).animate({
+            fontSize:'32px'
+        }, 200);
+    });
+
+    /* =============================================
+       7. Toggle Project Details (slideToggle)
+       ============================================= */
+    $('.toggle-details-btn').click(function() {
         var button = $(this);
         var detailsDiv = button.siblings('.project-details');
         
-        // Slide toggle the details section
         detailsDiv.slideToggle(400, function() {
-            // Change button text based on visibility
             if (detailsDiv.is(':visible')) {
                 button.text('Hide Details');
             } else {
@@ -76,25 +108,32 @@ $(document).ready(function() {
     });
 
     /* =============================================
-       4. Initial Page Load Animation (fade in)
+       8. Smooth Scroll for Navigation Links
        ============================================= */
-    // Fade in header with delay
-    $('.header-section').hide().fadeIn(1000);
-    
-    // Fade in each content section with staggered delays
-    var sections = $('.content-section');
-    sections.each(function(index) {
-        var section = $(this);
-        setTimeout(function() {
-            section.addClass('fade-in'); // trigger CSS transition
-        }, 200 * index); // delay increases for each section
+    $('a[href^="#"]').on('click', function(e) {
+        e.preventDefault();
+        
+        var target = $(this).attr('href');
+        var targetElement = $(target);
+        
+        if (targetElement.length) {
+            $('html, body').animate({
+                scrollTop: targetElement.offset().top - 80
+            }, 800);
+        }
     });
 
     /* =============================================
-       5. Optional: Back to Top Button (simple example)
+       9. Animate footer on scroll
        ============================================= */
-    // You can add a back-to-top button if needed
-    // For now, this is a placeholder for future enhancement
-    
+    $(window).scroll(function() {
+        var footerPos = $(".footer-section").offset().top;
+        var scrollPos = $(window).scrollTop() + $(window).height();
+        
+        if (scrollPos > footerPos) {
+            $(".footer-section").css({opacity:'1'});
+        }
+    });
+
     console.log('Portfolio script loaded successfully!');
 });

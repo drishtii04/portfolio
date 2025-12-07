@@ -81,18 +81,8 @@
         }
         
         .project-features li {
-            padding: 0.4rem 0;
+            margin-bottom: 0.5rem;
             color: var(--text-dark);
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .project-features li:before {
-            content: "✓";
-            color: var(--coral-accent);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
         }
         
         /* Responsive */
@@ -146,11 +136,11 @@
                         <div class="project-content">
                             <h3 class="project-title">Car Management System</h3>
                             <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">MySQL</span>
+                                <p class="tech-tag">HTML</p>
+                                <p class="tech-tag">CSS</p>
+                                <p class="tech-tag">JavaScript</p>
+                                <p class="tech-tag">PHP</p>
+                                <p class="tech-tag">MySQL</p>
                             </div>
                             <p class="project-description">
                                 A comprehensive web application for managing car inventory, buying, and selling records with an intuitive interface.
@@ -170,12 +160,12 @@
                         <div class="project-content">
                             <h3 class="project-title">NGO Management System</h3>
                             <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">AI Chatbot</span>
+                                <p class="tech-tag">HTML</p>
+                                <p class="tech-tag">CSS</p>
+                                <p class="tech-tag">JavaScript</p>
+                                <p class="tech-tag">PHP</p>
+                                <p class="tech-tag">MySQL</p>
+                                <p class="tech-tag">AI Chatbot</p>
                             </div>
                             <p class="project-description">
                                 Complete NGO management solution with donor tracking, event management, and AI-powered chatbot support.
@@ -195,11 +185,11 @@
                         <div class="project-content">
                             <h3 class="project-title">Personal Finance Tracker</h3>
                             <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">MySQL</span>
+                                <p class="tech-tag">HTML</p>
+                                <p class="tech-tag">CSS</p>
+                                <p class="tech-tag">JavaScript</p>
+                                <p class="tech-tag">PHP</p>
+                                <p class="tech-tag">MySQL</p>
                             </div>
                             <p class="project-description">
                                 Web application to monitor income, expenses, and savings goals with interactive data visualization.
@@ -219,11 +209,11 @@
                         <div class="project-content">
                             <h3 class="project-title">Online Quiz Application</h3>
                             <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">MySQL</span>
+                                <p class="tech-tag">HTML</p>
+                                <p class="tech-tag">CSS</p>
+                                <p class="tech-tag">JavaScript</p>
+                                <p class="tech-tag">PHP</p>
+                                <p class="tech-tag">MySQL</p>
                             </div>
                             <p class="project-description">
                                 Interactive quiz platform with timer functionality, instant scoring, and performance tracking system.
@@ -288,8 +278,58 @@
 
     <!-- jQuery from CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Main JavaScript File -->
-    <script src="script.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            
+            // Animate navigation buttons on hover
+            $(".nav-button").mouseenter(function() {
+                $(this).css({position:"relative"});
+                $(this).animate({
+                    paddingLeft:'25px',
+                    paddingRight:'25px',
+                    fontSize:'18px'
+                }, "slow");
+            });
+
+            $(".nav-button").mouseleave(function() {
+                $(this).animate({
+                    paddingLeft:'18px',
+                    paddingRight:'18px',
+                    fontSize:'16px'
+                }, "slow");
+            });
+
+            // Toggle project details
+            $(".toggle-details-btn").click(function() {
+                var button = $(this);
+                var detailsDiv = button.siblings(".project-details");
+                
+                detailsDiv.slideToggle(400, function() {
+                    if (detailsDiv.is(':visible')) {
+                        button.text('Hide Details');
+                    } else {
+                        button.text('Show Details');
+                    }
+                });
+            });
+
+            // Animate project cards on hover
+            $(".content-card").mouseenter(function() {
+                $(this).css({position:"relative"});
+                $(this).animate({
+                    left:'10px'
+                }, 200);
+            });
+
+            $(".content-card").mouseleave(function() {
+                $(this).animate({
+                    left:'0px'
+                }, 200);
+            });
+
+        });
+    </script>
 
 </body>
 </html>
